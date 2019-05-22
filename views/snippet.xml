@@ -3,7 +3,7 @@
 
 
   </data>
-  <template id="form_ausencia" inherit_id="website.snippets" name="Ausencias">
+  <template id="s_form_ausencia" inherit_id="website.snippets" name="Ausencias">
      <record id="hr_leave_view_form" model="ir.ui.view">
         <field name="name">hr.leave.view.form</field>
         <field name="model">hr.leave</field>
@@ -130,7 +130,7 @@
                   </span>Kingfisher Pro 
               </div>
               <div class="o_panel_body">
-                  <t t-snippet="snippet-ausencia.s_cuerpo"
+                  <t t-snippet="snippet-ausencia.s_form_ausencia"
                       t-thumbnail="/website/static/src/img/snippets_thumbs/s_tabs.png"/>
               </div>
           </div>
