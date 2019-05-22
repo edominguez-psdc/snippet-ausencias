@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "snippet-ausencia",
+    'name': "snippet-ausencias",
 
     'summary': """
-        Snippet para el registro de ausencias desde la web.""",
+        holi Snippet para el registro de ausencias desde la web.""",
 
     'description': """
         Modulo que agrega el snippet para el registro de ausencias desde la web y su 
