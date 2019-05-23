@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
-    <template id="s_form_ausencia">
-        <record id="s_view_au_form" model="ir.ui.view">
-            <field name="name">s.view.au.form</field>
-            <field name="model">hr.leave</field>
-            <field name="priority">32</field>
+    <data>
+        <record id="leave_view_form_inherit" model="ir.ui.view">
+            <field name="name">leave.view.form.inherit</field>
+            <field name="model">hr_holidays.hr_leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
             <field name="arch" type="xml">
                 <form string="Leave Request">
                 <field name="can_reset" invisible="1"/>
@@ -114,30 +114,32 @@
                 </form>
             </field>
         </record>
+    </data>
+    <template id="s_form_ausencia" name="Formulario de ausencia">
+        <section class="snippet_testimonial">
+            <div>
+                
+            </div>
+        </section>
     </template>
 
 
-<!--
-  <template id="snippet_ausencias" inherit_id="website.snippets" name="Ausencias">
-      <xpath expr="//div[@id='o_scroll']" position="inside">
-          <div class="o_panel" id="snippet_theme_crafito">
-              <div class="o_panel_header">
+
+
+    <template id="snippet_ausencias" inherit_id="website.snippets" name="Ausencias">
+        <xpath expr="//div[@id='o_scroll']" position="inside">
+            <div class="o_panel" id="snippet_theme_crafito">
+                <div class="o_panel_header">
                   <span class="fa-stack">
                       <i class="fa fa-circle-o-notch fa-stack-1x"/>
                   </span>PSDC Inc 
-              </div>
-              <div class="o_panel_body">
+                </div>
+                <div class="o_panel_body">
                   <t t-snippet="snippet-ausencias.s_form_ausencia"
                       t-thumbnail="/website/static/src/img/snippets_thumbs/s_tabs.png"/>
-              </div>
-          </div>
-      </xpath>
-  </template> 
-  -->
-  <template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
-    <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
-        <t t-snippet="snippet-ausencias.s_form_ausencia"
-        t-thumbnail="/website/static/src/img/snippets_thumbs/s_tabs.png"/>
-    </xpath>
-</template>  
+                </div>
+            </div>
+        </xpath>
+    </template> 
+
 </odoo>
