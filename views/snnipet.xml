@@ -5,7 +5,6 @@
             <field name="name">leave.view.form.inherit</field>
             <field name="model">hr_holidays.hr_leave</field>
             <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
-            
         </record>
     </data>
     <template id="s_form_ausencia" name="Formulario de ausencia">
