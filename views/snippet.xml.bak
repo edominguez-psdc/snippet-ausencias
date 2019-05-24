@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="leave_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.holidays.hr.views.common.form.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            
+        </record>
+    </data>
+    <template id="s_form_ausencia" name="Formulario de ausencia">
+        <section class="snippet_testimonial">
+            <div class="container text-center">
+                <group>
+                    <field name="holiday_type" string="Mode" groups="hr_holidays.group_hr_holidays_user"/>
+                    <field name="employee_id" groups="hr_holidays.group_hr_holidays_user" attrs="{'required': [('holiday_type', '=', 'employee')], 'invisible': [('holiday_type', '!=', 'employee')]}"/>
+                    <field name="mode_company_id" groups="hr_holidays.group_hr_holidays_user" attrs="{'required': [('holiday_type', '=', 'company')], 'invisible': [('holiday_type', '!=', 'company')]}"/>
+                    <field name="category_id" groups="hr_holidays.group_hr_holidays_user" attrs="{'required': [('holiday_type', '=', 'category')], 'invisible': [('holiday_type', '!=','category')]}"/>
+                    <field name="department_id" groups="hr_holidays.group_hr_holidays_user" attrs="{'required': [('holiday_type', '=', 'department')], 'invisible': [('holiday_type', 'not in', ('employee', 'department'))]}"/>
+                    <field name="payslip_status" groups="hr_holidays.group_hr_holidays_manager" widget="toggle_button"/>
+                </group>
+                <div groups="hr_holidays.group_hr_holidays_manager">
+                    <separator string="Comment by Manager"/>
+                    <field name="report_note" placeholder="e.g. Report to the next month..."/>
+                </div>
+            </div>
+        </section>
+    </template>
+
+
+
+
+    <template id="snippet_ausencias" inherit_id="website.snippets" name="Ausencias">
+        <xpath expr="//div[@id='o_scroll']" position="inside">
+            <div class="o_panel" id="snippet_theme_crafito">
+                <div class="o_panel_header">
+                  <span class="fa-stack">
+                      <i class="fa fa-circle-o-notch fa-stack-1x"/>
+                  </span>PSDC Inc 
+                </div>
+                <div class="o_panel_body">
+                  <t t-snippet="snippet-ausencias.s_form_ausencia"
+                      t-thumbnail="/website/static/src/img/snippets_thumbs/s_tabs.png"/>
+                </div>
+            </div>
+        </xpath>
+    </template> 
+
+</odoo>
+
+
+<!-- sin problemas de instalacion -->
