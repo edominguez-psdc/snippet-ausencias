@@ -8,7 +8,7 @@ PSQL_USER = "test"
 PSQL_PASS = "12345"
 PSQL_DB   = "leave12"
 
-
+# holiday_status_id  date_from  date_to  name
 class HolidaysRequest(models.Model):
     _inherit = 'hr.leave'
 
