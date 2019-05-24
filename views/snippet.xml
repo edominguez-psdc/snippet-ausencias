@@ -12,33 +12,35 @@
             <div>
                 <form action="/website_form/" method="post" class="s_website_form container-fluid mt32" enctype="multipart/form-data">
                     <div class="container">
-                        <div class="form-group row">
+                        <div class="form-group form-field">
                             <xpath expr="//group[@name='col_right']" position="replace">
-                                <div class="form-group row form-field o_website_form_required_custom">
-                                    <label class="col-lg-7 col-md-4 col-form-label" for="contact_name">Tipo de Ausencia: </label>
+                                <div class="form-group row form-field">
+                                    <label class="col-lg-5 col-md-4 col-form-label" for="contact_name">Tipo de Ausencia: </label>
                                     <div class="col-lg-7 col-md-8">
-                                        <select name="type_value" class="form-control o_website_form_input" t-att-value="request.params.get('type_value', '')">
-                                            <option value="1">Enfermo</option>
-                                            <option value="2">Compromiso</option>
+                                        <select name="type_value" id="holiday_status_id" class="form-control o_website_form_input" t-att-value="request.params.get('type_value', '')">
+                                            <option value="1">Ausencias legales</option>
+                                            <option value="2">Ausencia por enfermedad</option>
+                                            <option value="3">Dias compensatorios</option>
+                                            <option value="4">Dias no pagados</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row form-field">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="phone">Duracion</label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="text" class="form-control o_website_form_input" name="duration" t-att-value="request.params.get('duration', '')" />
+                                        <input type="text" class="form-control o_website_form_input" id="number_of_days_dysplay"  readOnly= "True"  name="duration" t-att-value="request.params.get('duration', '')" />
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required_custom">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="email_from">De: </label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="date" class="form-control o_website_form_input" name="date_from" t-att-value="request.params.get('date_from', '')"/>
+                                        <input type="date" class="form-control o_website_form_input" id="date_from" name="date_from" t-att-value="request.params.get('date_from', '')"/>
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required_custom">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="partner_name">Hasta</label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="date" class="form-control o_website_form_input" name="date_to" t-att-value="request.params.get('date_to', '')"/>
+                                        <input type="date" class="form-control o_website_form_input" id= "date_to" name="date_to" t-att-value="request.params.get('date_to', '')"/>
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required">
