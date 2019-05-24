@@ -20,7 +20,7 @@ class HolidaysRequest(models.Model):
 
             # Abrir un cursor para realizar operaciones sobre la base de datos
             cur = conn.cursor()
-            query_insert = "INSERT INTO hr_leave(id, orig_filename, file_data) VALUES (DEFAULT,%s,%s)"
+            query_insert = "INSERT INTO hr_leave(holiday_status_id, date_from, date_to, name) VALUES (DEFAULT,%s,%s,%s,%s)"
             cur.execute(query_insert)
 
             # Ejecutar una consulta SELECT
