@@ -3,6 +3,7 @@ from odoo import http
 from odoo.http import request
 from odoo.addons.website_form.controllers.main import WebsiteForm
 
+ 
 class WebsiteForm(WebsiteForm):
 
     # Check and insert values from the form on the model <model>
