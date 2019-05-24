@@ -34,8 +34,9 @@ connection = psycopg2.connect(user="test",
                                   database="leave12")
 cursor= connection.cursor()
 
-query_insert = "INSERT INTO hr_leave(id,holiday_status_id, date_from,date_to,name,state,payslip_status,user_id,employee_id,number_of_days,holiday_type,request_date_from,request_date_to,request_date_from_period,request_unit_half,request_unit_hours,request_unit_custom,create_uid,create_date,write_uid,write_date) VALUES ('5','2', '30/05/2019 08:00:00', '31/05/2019 17:00:00', 'aiuda','confirm','False','2','1','2','employee','28/05/2019','29/05/2019','am', 'False','False','False','2','24/05/2019 15:58:55.23','2','24/05/2019 15:58:55.23');"
+query_insert = "INSERT INTO hr_leave(id,holiday_status_id, date_from,date_to,name,state,payslip_status,user_id,employee_id,number_of_days,holiday_type,request_date_from,request_date_to,request_date_from_period,request_unit_half,request_unit_hours,request_unit_custom,create_uid,create_date,write_uid,write_date) VALUES ('7','2', '30/05/2019 08:00:00', '31/05/2019 17:00:00', 'eureka','confirm','False','2','1','2','employee','28/05/2019','29/05/2019','am', 'False','False','False','2','24/05/2019 15:58:55.23','2','24/05/2019 15:58:55.23');"
 
 cursor.execute(query_insert)
+connection.commit()
 cursor.close()
 connection.close()
