@@ -3,7 +3,7 @@
     <data>
         <record id="leave_view_form_inherit" model="ir.ui.view">
             <field name="name">leave.view.form.inherit</field>
-            <field name="model">hr_holidays.hr_leave</field>
+            <field name="model">hr_leave</field>
             <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
         </record>
     </data>
