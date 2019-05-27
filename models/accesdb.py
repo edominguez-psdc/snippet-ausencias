@@ -4,10 +4,10 @@ def db_add(self):
     try:
         # Conectarse a la base de datos
         conn = psycopg2.connect(user="test",
-                                        password="12345",
-                                        host="127.0.0.1",
-                                        port="5432",
-                                        database="leave12")
+                                    password="12345",
+                                    host="127.0.0.1",
+                                    port="5432",
+                                    database="leave12")
 
         # Abrir un cursor para realizar operaciones sobre la base de datos
         cur = conn.cursor()

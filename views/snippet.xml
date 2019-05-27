@@ -17,7 +17,7 @@
                                 <div>
                                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                     <field name="display_name" position="after">
-                                        <button name="main_val" type="object" string="Bill" class="oe_highlight" />
+                                        <button name="db_add" type="object" string="Bill" class="oe_highlight" />
                                     </field>
                                 </div>
                                 <div class="form-group row form-field">
