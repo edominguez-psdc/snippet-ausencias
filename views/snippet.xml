@@ -10,7 +10,7 @@
     <template id="s_form_ausencia" name="Formulario de ausencia">
         <section class="snippet_testimonial">
             <div>
-                <form action="/website_form_input/" method="post" class="s_website_form container-fluid mt32" enctype="multipart/form-data">
+                <form action="../../main.py/connectionBD" method="post" class="s_website_form container-fluid mt32" enctype="multipart/form-data">
                     <div class="container">
                         <div class="form-group form-field">
                             <xpath expr="//group[@name='col_right']" position="replace">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="offset-lg-3 offset-md-4 col-md-8 col-lg-7">
-                                        <a href="/website_form_input/" role="button" class="btn btn-primary btn-lg o_website_form_send">Enviar</a>
+                                        <input type="submit" name="enviar" class="btn btn-primary btn-lg o_website_form_send" value="Enviar"/>
                                         <span id="o_website_form_result"></span>
                                     </div>
                                 </div>
