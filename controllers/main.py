@@ -1,9 +1,9 @@
+"""import psycopg2
 from odoo import http
-from odoo.http import request
-from modulos_prueba.snippet-ausencias.controllers.main import WebsiteFormAu
-import psycopg2
+from odoo.http import request"""
 
-class WebsiteFormAu(WebsiteFormAu):
+
+"""class WebsiteFormAu(WebsiteFormAu):
 
     @http.route('/website_form/<string:model_name>', type='http', auth="public", methods=['POST'], website=True)
     def connectionBD(self):
@@ -23,7 +23,7 @@ class WebsiteFormAu(WebsiteFormAu):
         cursor.execute(query_insert)
         connection.commit()
         cursor.close()
-        connection.close()
+        connection.close()"""
 
 
 
