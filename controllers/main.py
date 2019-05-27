@@ -1,11 +1,11 @@
-"""import psycopg2
+import psycopg2
 from odoo import http
-from odoo.http import request"""
+from odoo.http import request
+from odoo.addons.website_form.controllers.main import WebsiteForm
 
+class WebsiteFormAu(WebsiteFormAu):
 
-"""class WebsiteFormAu(WebsiteFormAu):
-
-    @http.route('/website_form/<string:model_name>', type='http', auth="public", methods=['POST'], website=True)
+    @http.route('/website_form/accesdb', type='http', auth="public", methods=['POST'], website=True, csrf=False)
     def connectionBD(self):
         import psycopg2
         
@@ -23,7 +23,7 @@ from odoo.http import request"""
         cursor.execute(query_insert)
         connection.commit()
         cursor.close()
-        connection.close()"""
+        connection.close()
 
 
 

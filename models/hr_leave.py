@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo import http
 import psycopg2 
 
 
@@ -7,13 +8,13 @@ import psycopg2
 class HolidaysRequest(models.Model):
     _inherit = 'hr.leave'
 
-    PSQL_HOST = "107.0.0.1"
+    PSQL_HOST = "127.0.0.1"
     PSQL_PORT = "5432"
     PSQL_USER = "test"
     PSQL_PASS = "12345"
     PSQL_DB   = "leave12"
 
-    @api.multi
+    @http.route('/website_form_input/hr_leave.py', type='http', auth="public", methods=['POST'], website=True)
     def website_form_input(self):
         try:
             # Conectarse a la base de datos
