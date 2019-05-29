@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+
+        <record id='hr_leave_view_form'>
+            <field name="name">hr.leave.view.form</field>
+            <field name="model">hr.leave.</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref='hr_holidays.hr_leave_view_form' />
+            <field name="arch" type="xml">
+                <xpath>
+                    <field name="name"/>
+                </xpath>
+            </field>    
+        </record>
+            <!-- OBLIGATORIO PARA QUE APAREZCA EN EL SNIPPET SELECTOR  -->
+        <template id="snippet_ausencias" inherit_id="website.snippets" name="Ausencias">
+            <xpath expr="//div[@id='o_scroll']" position="inside">
+                <div class="o_panel" id="snippet_theme_crafito">
+                    <div class="o_panel_header">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle-o-notch fa-stack-1x"/>
+                    </span>PSDC Inc 
+                    </div>
+                    <div class="o_panel_body">
+                    <t t-snippet="snippet-ausencias.s_form_ausencia"
+                        t-thumbnail="/website/static/src/img/snippets_thumbs/s_tabs.png"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+<!-- hr_holidays.hr_leave_view_form -->

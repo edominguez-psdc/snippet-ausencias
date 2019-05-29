@@ -25,6 +25,8 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        # 'security/hr_holidays_security.xml',
+        # 'security/ir.model.access.csv',
         'views/snippet.xml',
     ],
     # only loaded in demonstration mode

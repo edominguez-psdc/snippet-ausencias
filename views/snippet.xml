@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
-    <data>
-        <record id="leave_view_form_inherit" model="ir.ui.view">            
-            <field name="name">leave.view.form</field>
-            <field name="model">accesdb</field>
-            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
-        </record>
-    </data>
+
     <template id="s_form_ausencia" name="Formulario de ausencia">
         <section class="snippet_testimonial">
             <div>
@@ -14,45 +8,53 @@
                     <div class="container">
                         <div class="form-group form-field">
                             <xpath expr="//group[@name='col_right']" position="replace">
-                                <div>
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <field name="display_name" position="after">
-                                        <button name="db_add" type="object" string="Bill" class="oe_highlight" />
-                                    </field>
-                                </div>
                                 <div class="form-group row form-field">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="contact_name">Tipo de Ausencia: </label>
                                     <div class="col-lg-7 col-md-8">
-                                        <select name="type_value" id="holiday_status_id" class="form-control o_website_form_input" >
-                                            <option value="1">Ausencias legales</option>
+                                        <select name="holiday_status_id" class="form-control o_website_form_input" >
+                                            <!-- <option value="1">Ausencias legales</option>
                                             <option value="2">Ausencia por enfermedad</option>
                                             <option value="3">Dias compensatorios</option>
-                                            <option value="4">Dias no pagados</option>
+                                            <option value="4">Dias no pagados</option> -->
                                         </select>
+                                        <data>
+                                            <record id='hr_leave_view_form' model="ir.ui.view">
+                                                <field name="name">hr.leave.view.form</field>
+                                                <field name="model">hr.leave.</field>
+                                                <field name="type">form</field>
+                                                <field name="inherit_id" ref='hr_holidays.hr_leave_view_form' />
+                                                <field name="name"> </field>
+                                                <!-- <field name="arch" type="xml">
+                                                    <xpath>
+                                                        <field name="name"/>
+                                                    </xpath>
+                                                </field>     -->
+                                            </record>
+                                        </data>
                                     </div>
                                 </div>
                                 <div class="form-group row form-field">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="phone">Duracion</label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="text" class="form-control o_website_form_input" id="number_of_days_dysplay"  readOnly= "True"  name="duration" />
+                                        <input type="text" class="form-control o_website_form_input" name="number_of_days_display"  readOnly= "True" />
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required_custom">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="email_from">De: </label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="date" class="form-control o_website_form_input" id="date_from" name="date_from" />
+                                        <input type="date" class="form-control o_website_form_input" name="date_from" />
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required_custom">
                                     <label class="col-lg-5 col-md-4 col-form-label" for="partner_name">Hasta</label>
                                     <div class="col-lg-7 col-md-8">
-                                        <input type="date" class="form-control o_website_form_input" id= "date_to" name="date_to" />
+                                        <input type="date" class="form-control o_website_form_input" name="date_to" />
                                     </div>
                                 </div>
                                 <div class="form-group row form-field o_website_form_required">
-                                    <label class="col-lg-5 col-md-4 col-form-label" id="name" for="name">Descripcion</label>
+                                    <label class="col-lg-5 col-md-4 col-form-label" for="name">Descripcion</label>
                                     <div class="col-lg-7 col-md-8">
-                                        <textarea type="text" class="form-control o_website_form_input" name="description" />
+                                        <textarea type="text" class="form-control o_website_form_input" name="name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
